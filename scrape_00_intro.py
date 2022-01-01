@@ -21,3 +21,4 @@
 # pip install requests
 # pip install html5lib
 # pip install bs4
+# sudo apt-get install python3-lxml  (if you want to use lxml for parsing html)

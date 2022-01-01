@@ -19,7 +19,26 @@ r = requests.get(URL)
         2. html5lib : Specifying the HTML parser we want to use.
 '''
 
-soup = BeautifulSoup(r.content, 'html5lib') # If this line causes an error, run 'pip install html5lib' or install html5lib
+soup = BeautifulSoup(r.content,'html5lib') # If this line causes an error, run 'pip install html5lib' or install html5lib
+'''
+    We can also use 'html.parser' and 'lxml'. Just use:
+    
+        soup = BeautifulSoup(r.content,'html.parser')
+        soup = BeautifulSoup(r.content,'lxml')  # If this line causes an error, run 'sudo apt-get install python3-lxml'
+
+
+    So, what is the difference between them? 
+
+    Ans->  visit these sites: 1. https://www.geeksforgeeks.org/html5lib-and-lxml-parsers-in-python/
+                              2. https://stackoverflow.com/questions/45494505/beautifulsoup-whats-the-difference-between-lxml-and-html-parser-and-html5
+
+        The basic reasoning why would you prefer one parser instead of others:
+
+            -> html.parser- built-in - no extra dependencies needed
+            -> html5lib - the most lenient - better use it if HTML is broken (tags not properly opened or closed)
+            -> lxml - the fastest
+
+'''
 # Now print soup.prettify() , it gives the visual representation of the parse tree created from the raw HTML content.
 # Printing soup will also print the html content. But, with prettify(), it will be more readable and easier to visualize.
 
